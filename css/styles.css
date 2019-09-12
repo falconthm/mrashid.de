@@ -12,9 +12,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
-nav {
-    background: green;
-}
+
 a {
     color: black;
 }
@@ -62,6 +60,7 @@ h2 {
 --------------------------------------*/
 nav {
     text-align: center;
+    background: whitesmoke;
 }
 nav a {
     display: inline-block;
