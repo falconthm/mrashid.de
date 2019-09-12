@@ -91,6 +91,7 @@ header h2 {
 
 /* Header styles only */
 header {
+  padding-top: 50px;
   /*text-align: center;*/
 }
 .profile-img {
