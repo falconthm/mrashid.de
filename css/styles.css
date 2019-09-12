@@ -24,21 +24,21 @@ h1, h2 {
   font-weight: 400;
 }
 h1 {
-  font-size: 80px;
+  font-size: 70px;
 }
 h2 {
-  font-size: 40px;
+  font-size: 35px;
   margin-top: 0;
 }
 .content-wrap {
-  max-width: 950px;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 50px;
   overflow: hidden;
 }
 
 .column-narrow {
-  width: 35%;
+  width: 30%;
   float: left;
   padding-right: 3%;
   min-height: 175px;
