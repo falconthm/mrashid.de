@@ -24,12 +24,15 @@ h1, h2 {
   font-weight: 400;
 }
 h1 {
-  font-size: 75px;
+  font-size: 80px;
 }
 h2 {
-  font-size: 35px;
+  font-size: 40px;
   margin-top: 0;
 }
+/*h3 {
+    margin: 0;
+}*/
 .content-wrap {
   max-width: 1050px;
   margin: 0 auto;
@@ -38,16 +41,32 @@ h2 {
 }
 
 .column-narrow {
-  width: 30%;
+  width: 35%;
   float: left;
   padding-right: 3%;
-  min-height: 175px;
+    margin-bottom: 0;
+  /*min-height: 175px;*/
 
 }
 .column-wide {
   width: 62%;
   float: left;
-  min-height: 175px;
+  /*min-height: 175px;*/
+}
+
+
+/* Navigation-------
+--------------------------------------*/
+nav {
+    text-align: center;
+}
+nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    color : #DC143C;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 
@@ -92,7 +111,15 @@ footer {
 .work {
     background: #F8FCEE;
 }
-
+/*h3 ~ p {
+    margin: 0;
+}*/
+/*.column-narrow p {
+    margin : 0;
+}*/
+.company-name p {
+    margin: 0;
+}
 
 /* Education
 ------------------------------------*/
