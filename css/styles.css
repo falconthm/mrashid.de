@@ -12,7 +12,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
-
 a {
     color: black;
 }
@@ -91,7 +90,7 @@ header h2 {
 
 /* Header styles only */
 header {
-  padding-top: 50px;
+    padding-top: 50px;
   /*text-align: center;*/
 }
 .profile-img {
@@ -106,8 +105,10 @@ footer {
   text-align: center;
 }
 .contact-info a {
-  padding: 10px;
-  display: inline-block;
+    padding: 10px;
+   display: inline-block;
+    font-size: 60px;
+    color: whitesmoke;
 }
 
 
