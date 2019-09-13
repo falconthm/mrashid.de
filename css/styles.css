@@ -53,6 +53,13 @@ h2 {
   float: left;
   /*min-height: 175px;*/
 }
+.cv{
+    text-decoration: none;
+    background: #DC143C;
+    color: whitesmoke;
+    padding: 10px;
+    display: inline-block;
+}
 
 
 /* Navigation-------
@@ -91,6 +98,7 @@ header h2 {
 /* Header styles only */
 header {
     padding-top: 50px;
+    position: relative;
   /*text-align: center;*/
 }
 .profile-img {
@@ -99,6 +107,11 @@ header {
   /*float: left;*/
   /*margin-right: 30px;*/
 }
+.download{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 /* Footer styles only */
 footer {
@@ -106,7 +119,7 @@ footer {
 }
 .contact-info a {
     padding: 10px;
-   display: inline-block;
+    display: inline-block;
     font-size: 60px;
     color: whitesmoke;
 }
@@ -116,7 +129,7 @@ footer {
 /* Work Experience
 ------------------------------------*/
 .work {
-    background: #F8FCEE;
+    background: #f6faed;
 }
 /*h3 ~ p {
     margin: 0;
@@ -131,7 +144,9 @@ footer {
 /* Education
 ------------------------------------*/
 .education {
-    background: #F1FFFA;
+    /*background: #F1FFFA;*/
+    background: linear-gradient(rgba(241, 255, 250, 1), rgba(241, 255, 250, 0.5)), url(../images/education.jpg) no-repeat;
+    background-size: cover;
 }
 
 /* Personal Skills
