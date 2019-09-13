@@ -145,7 +145,7 @@ footer {
 ------------------------------------*/
 .education {
     /*background: #F1FFFA;*/
-    background: linear-gradient(rgba(241, 255, 250, 1), rgba(241, 255, 250, 0.5)), url(../images/education.jpg) no-repeat;
+    background: linear-gradient(rgba(241, 255, 250, .9), rgba(241, 255, 250, 0.5)), url(../images/education.jpg) no-repeat;
     background-size: cover;
 }
 
