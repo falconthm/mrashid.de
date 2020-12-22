@@ -14,3 +14,4 @@ jobs:
           title-or-body: "both"
           parameters: '[ {"keywords": ["Requesting access to", "error"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "guidance"], "labels": ["help-wanted"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+          issue-message: 'you seem to request access to a certain repository but the issue lacks information'
