@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: npm install
-      - run: npm run build
       - uses: ./
         with:
           parameters: '[ {"keywords": ["label", "test"], "labels": ["good first issue", "foo"], "assignees": []}, {"keywords": ["assign", "test"], "labels": [], "assignees": ["Naturalclar"]}]'
