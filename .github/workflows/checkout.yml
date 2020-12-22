@@ -1,0 +1,125 @@
+
+name: Repository access request form and validation
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  issues: 
+    types: [opened]
+  pull_request:
+    types: [opened]
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      title:
+        description: Title of Issue
+        default: deafult_issue
+        required: true  
+     
+      required_repository:
+        description: What repository are you seeking to access
+        default: default_repository
+        required: true
+      
+      reason:
+        description: Why is access required for this repository
+        default: default_reason
+        required: true
+      
+      type_of_access:
+        description: Type of access required? admin, read or write
+        default: read
+        required: true
+        
+      access_duration:
+        description: Limited or unlimited access
+        default: limited
+        required: true
+
+jobs:
+  Validation_of_info:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: title_validation
+        run: title=${{ github.event.inputs.title }}
+              pass="pass"
+              validation_fail="fail"
+              var_1="Requesting access to"
+              if [ $var_1 == $title ] ; then
+              echo "$pass"
+              else
+              echo "$validation_fail"
+              fi
+                         
+      - name: label_validation
+      - uses: jesusvasquez333/verify-pr-label-action@v1.3.1
+        with:
+              github-token: '${{ secrets.GITHUB_TOKEN }}'
+              valid-labels: 'Repository Access'
+
+      - name: what/why/timespan_validation
+        run: what=${{ github.event.inputs.required_repository }}
+              why=${{ github.event.inputs.reason }}
+              timespan=${{ github.event.inputs.access_duration }}
+              pass="pass"
+              validation_fail="fail"
+              if [ -z "$what" ] || [ -z "$why" ] || [ -z "$timespan" ] ; then
+              echo "$validation_fail"
+              else
+              echo "$pass"
+              fi      
+              # -z indicates whether variable is null of not
+
+      - name: validation_failure_message
+        run: title validation=${{ github.event.jobs.steps.title_validation }}
+              what/why/timespan_validation=${{ github.event.jobs.steps.title_validation }}
+              if [ $title_validation || $what/why/timespan_validation == "fail" || [{"labels" != ["Repository Access"]}  ; then 
+              echo "Hi,"
+              echo
+              echo "you seem to request access to a certain repository but the issue lacks information."
+              echo "Please add the additional information missing:"
+              echo
+              echo "1. What repository"
+              echo "2. Reason for access"
+              echo "3. Kind of access"
+              echo "4. Duration of access"
+              echo
+              echo "Thanks,"
+              echo "your Developer IT Team"
+              else
+              echo
+              fi
+                            
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          parameters: '[ {"labels": ["Awaiting Input"]} ]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: validation-success_message
+        run: title validation=${{ github.event.jobs.steps.title_validation }}
+              label_validation==${{ github.event.jobs.steps.label_validation }}
+              what/why/timespan_validation=${{ github.event.jobs.steps.title_validation }}
+              if [ $title_validation || $label_validation || $what/why/timespan_validation == "pass" ] ; then 
+              echo "Hi,"
+              echo
+              echo "thanks for requesting access to a repository."
+              echo "We will process your request as soon as possible."
+              echo
+              echo "Please have a look @developer-it"
+              echo
+              echo "Thanks,"
+              echo "your Developer IT Team"
+              else
+              echo
+              fi
+              
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          parameters: '[ {"labels": ["Awaiting Approval"]} ]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"      
+
+    
+
+              
