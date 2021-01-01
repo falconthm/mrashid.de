@@ -1,30 +1,29 @@
-name: 'Create Issue From File'
-description: 'An action to create an issue using content from a file'
+name: "Issue Auto Labeling and Assigning"
+description: "trigger an action based on issue content"
 inputs:
-  token:
-    description: 'The GitHub authentication token'
-    default: ${{ github.token }}
-  issue-number:
-    description: 'The issue number of an existing issue to update'
-  title:
-    description: 'The title of the issue.'
+  github-token:
+    description: "Github token"
     required: true
-  content-filepath:
-    description: 'The file path to the issue content.'
-  labels:
-    description: 'A comma separated list of labels.'
-  assignees:
-    description: 'A comma separated list of assignees (GitHub usernames).'
-  project:
-    description: 'Deprecated. See README for details.'
-  project-column:
-    description: 'Deprecated. See README for details.'
+  parameters:
+    description: "JSON array of keywords to look for and labels and assignees to be set when there's a keyword match"
+    required: true
+  title-or-body:
+    description: "Whether to check the issue title, the issue body, or both for matching keywords"
+    required: false
+    default: "both"
+
 outputs:
-  issue-number:
-    description: 'The number of the created issue.'
+  title:
+    description: "Title of Issue"
+  body:
+    description: "Body of Issue"
+  labeled:
+    description: "\"true\" if labeled otherwise \"false\""
+  assigned:
+    description: "\"true\" if assigned otherwise \"false\""
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "lib/index.js"
 branding:
-  icon: 'alert-circle'  
-  color: 'orange'
+  icon: alert-circle
+  color: gray-dark
