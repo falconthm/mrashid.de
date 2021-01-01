@@ -11,7 +11,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: start_1
+      #- name: start_1
       - uses: Naturalclar/issue-action@v2.0.2
         with:
           title-or-body: "both"
