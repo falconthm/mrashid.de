@@ -1,0 +1,83 @@
+name: "Set Issue Label"
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start_1
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          title-or-body: "both"
+          parameters: '[ {"keywords": ["Requesting access to", "error" , "Rashid"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "limited"], "labels": ["help-wanted"], "assignees": ["username"]}]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+         # name:  
+         # if:  ${{ success() }}
+          #  - run: Job2
+  Job2: 
+    runs-on: ubuntu-latest
+   # steps:
+      #- run: echo "hello how are you!!!"
+    steps:
+      - uses: bubkoo/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpened: >
+            👋 hi, 
+            
+            you seem to request access to a certain repository but the issue lacks information.
+            
+            Please add the additional information missing:
+            
+            1. What repository
+            
+            2. Reason for access
+            
+            3. Kind of access
+            
+            4. Duration of access
+            
+            
+            
+            Thanks,
+            
+            your Developer IT Team
+            
+#       - uses: fregante/title-to-labels-action@v1
+#         with:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           keywords: Requesting access to  #, bug report
+#           labels: Awaiting Input
+            
+#      # - uses: srggrs/assign-one-project-github-action@1.2.0
+        
+#       #  if: |
+#        #      contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
+#         #     contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
+
+      
+        
+        
+          
+
+                   
+        
+     
+   
+   
+   
+   #env:
+       # MY_VAR: Hi there! My name is
+        #FIRST_NAME: Mona
+        #MIDDLE_NAME: The
+        #LAST_NAME: Octocat
+        #run: |
+        # echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+    
+
