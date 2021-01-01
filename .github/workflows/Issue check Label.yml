@@ -43,13 +43,17 @@ jobs:
             
             your Developer IT Team
             
-             
+      - uses: fregante/title-to-labels-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         # keywords: bug, bug report
+          labels: bug
             
-      - uses: srggrs/assign-one-project-github-action@1.2.0
+     # - uses: srggrs/assign-one-project-github-action@1.2.0
         
-        if: |
-             contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
-             contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
+      #  if: |
+       #      contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
+        #     contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
 
       
         
