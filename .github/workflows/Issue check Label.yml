@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - uses: Naturalclar/issue-action@v2.0.2
-        with:
+         with:
           title-or-body: "both"
           parameters: '[ {"keywords": ["Requesting access to", "error"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "guidance"], "labels": ["help-wanted from mahbub"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
