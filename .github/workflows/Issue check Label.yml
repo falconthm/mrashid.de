@@ -6,7 +6,7 @@ on:
     types: [opened]
 
 jobs:
-  test:
+  job1:
     runs-on: ubuntu-latest
     steps:
        - uses: Naturalclar/issue-action@v2.0.2
@@ -14,4 +14,14 @@ jobs:
           title-or-body: "both"
           parameters: '[ {"keywords": ["Requesting access to", "error"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "guidance"], "labels": ["help-wanted from mahbub"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-          issue-message: 'you seem to request access to a certain repository but the issue lacks information'
+  Job2: 
+    runs-on: ubuntu-latest
+    if: job1
+    env:
+        MY_VAR: Hi there! My name is
+        FIRST_NAME: Mona
+        MIDDLE_NAME: The
+        LAST_NAME: Octocat
+        run: |
+         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+    
