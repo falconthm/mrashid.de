@@ -16,7 +16,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
   Job2: 
     runs-on: ubuntu-latest
-    if: job1
+    needs: job1
     env:
         MY_VAR: Hi there! My name is
         FIRST_NAME: Mona
