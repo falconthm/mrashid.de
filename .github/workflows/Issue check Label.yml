@@ -46,8 +46,8 @@ jobs:
       - uses: fregante/title-to-labels-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         # keywords: bug, bug report
-          labels: bug
+          keywords: Awaiting Input #, bug report
+          labels: Awaiting Input
             
      # - uses: srggrs/assign-one-project-github-action@1.2.0
         
