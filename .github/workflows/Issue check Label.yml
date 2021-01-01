@@ -38,6 +38,9 @@ jobs:
             3. Kind of access
             
             4. Duration of access
+            
+            Thanks,
+            your Developer IT Team
 
           pullRequestOpened: >
             👋 @{{ author }}
