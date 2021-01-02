@@ -1,5 +1,5 @@
 name: "Set Issue Label"
-#on:
+on:
   issues:
     types: [opened]
   pull_request:
