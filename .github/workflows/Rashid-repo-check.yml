@@ -15,7 +15,7 @@ jobs:
       - uses: Naturalclar/issue-action@v2.0.2
         with:
           title-or-body: "both"
-          parameters: '[ {"keywords": ["Requesting access to", "error" , "Rashid"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "limited"], "labels": ["help-wanted"], "assignees": ["username"]}]'
+          parameters: '[ {"keywords": ["Requesting access to", "developer" , "IT" , "Solution"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["bug fix", "change" , "upadte", "admin" , "write" , "read" ,  "unlimited" , "short period" ], "labels": ["help-wanted"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
          # name:  
          # if:  ${{ success() }}
