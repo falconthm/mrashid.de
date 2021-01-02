@@ -7,7 +7,6 @@ on:
 
 
 jobs:
-
   job1:
     runs-on: ubuntu-latest
     steps:
@@ -19,15 +18,15 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
          # name:  
          # if:  ${{ success() }}          #  - run: Job2
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: body validation for question 1 (developer/IT/Solution)
-      - uses: Naturalclar/issue-action@v2.0.2
-        with:
-          title-or-body: "body"
-          parameters: '[ {"keywords": ["developer", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Solution", "IT"], "labels": ["Repository Access"], "assignees": ["username"]}]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+#   job2:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: body validation for question 1 (developer/IT/Solution)
+#       - uses: Naturalclar/issue-action@v2.0.2
+#         with:
+#           title-or-body: "body"
+#           parameters: '[ {"keywords": ["developer", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Solution", "IT"], "labels": ["Repository Access"], "assignees": ["username"]}]'
+#           github-token: "${{ secrets.GITHUB_TOKEN }}"
 #   job3:
 #     runs-on: ubuntu-latest
 #     steps:
