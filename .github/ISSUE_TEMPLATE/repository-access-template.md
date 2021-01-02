@@ -1,5 +1,5 @@
 ---
-Name: Repository Access template
+name: Repository Access template
 about: Create a request to gain access to a repository
 title: 'Requesting access to '
 labels: Repository Access
@@ -10,7 +10,7 @@ assignees: ''
 
 
 ---
-Name: Repository Access
+name: Repository Access
 about: Create a request to gain access to a repository
 ---
 
