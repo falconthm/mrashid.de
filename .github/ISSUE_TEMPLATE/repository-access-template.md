@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+!!!!!!! N.B: Please use the given keyword below !!!!
+
 ---
 name: Repository Access
 about: Create a request to gain access to a repository
@@ -16,16 +18,16 @@ about: Create a request to gain access to a repository
 
 ## What
 
-What repository would you like access to?
+What repository would you like access to (developer/IT/Solution)?
 
 ## Reason
 
-Why to you need access to the repository?
+Why do you need access to the repository (bug fix/change/upadte?
 
 ## Kind of access
 
-Do you require admin, write or only read access?
+Do you require (admin/write/read access)?
 
 ## Duration of access
 
-Should this access be granted for an unlimited time or short period.
+Should this access be granted for? (unlimited/short period)
