@@ -11,7 +11,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      #- name: start_1
+      - name: Title validation
       - uses: Naturalclar/issue-action@v2.0.2
         with:
           title-or-body: "title"
@@ -20,7 +20,26 @@ jobs:
          # name:  
          # if:  ${{ success() }}
           #  - run: Job2
-  job2: 
+job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: body validation for question 1 (developer/IT/Solution)
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          title-or-body: "body"
+          parameters: '[ {"keywords": ["developer", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Solution", "IT"], "labels": ["Repository Access"], "assignees": ["username"]}]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: body validation for question 2 (Reson)
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          title-or-body: "body"
+          parameters: '[ {"keywords": ["developer", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Solution", "IT"], "labels": ["Repository Access"], "assignees": ["username"]}]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+                  
+job4: 
     runs-on: ubuntu-latest
     needs: [job1]
    # steps:
