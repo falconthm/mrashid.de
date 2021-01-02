@@ -7,8 +7,22 @@ on:
 
 
 jobs:
-  Job2: 
+
+  job1:
     runs-on: ubuntu-latest
+    steps:
+      #- name: start_1
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          title-or-body: "both"
+          parameters: '[ {"keywords": ["Requesting access to", "error" , "Rashid"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "limited"], "labels": ["help-wanted"], "assignees": ["username"]}]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+         # name:  
+         # if:  ${{ success() }}
+          #  - run: Job2
+  job2: 
+    runs-on: ubuntu-latest
+    needs: [job1]
    # steps:
       #- run: echo "hello how are you!!!"
     steps:
@@ -35,32 +49,23 @@ jobs:
             Thanks,
             
             your Developer IT Team
-     
-  job1:
+            
+
+  job3:
     runs-on: ubuntu-latest
+    needs: [job2]
     steps:
-       - uses: Naturalclar/issue-action@v2.0.2
-         with:
-          title-or-body: "both"
-          parameters: '[ {"keywords": ["Requesting access to", "error" , "Rashid"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["help", "limited"], "labels": ["help-wanted"], "assignees": ["username"]}]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-          if:  ${{ success() }}
-          -run: Job2
-          -else:  echo "Hoisa"; 
-    
-  
+      - uses: fregante/title-to-labels-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          keywords: "Requesting access to"  #, bug report
+          labels: "Awaiting Input"
             
-#       - uses: fregante/title-to-labels-action@v1
-#         with:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           keywords: Requesting access to  #, bug report
-#           labels: Awaiting Input
-            
-#      # - uses: srggrs/assign-one-project-github-action@1.2.0
+     # - uses: srggrs/assign-one-project-github-action@1.2.0
         
-#       #  if: |
-#        #      contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
-#         #     contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
+      #  if: |
+       #      contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
+        #     contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
 
       
         
@@ -81,3 +86,4 @@ jobs:
         #run: |
         # echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
     
+
