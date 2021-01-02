@@ -7,14 +7,14 @@ assignees: ''
 
 ---
 
-!!!!!!! N.B: Please use the given keyword below !!!!
+
 
 ---
 name: Repository Access
 about: Create a request to gain access to a repository
 ---
 
-# Requesting Access
+# Requesting Access !!! N.B: Please use the given keyword below !!!
 
 ## What
 
