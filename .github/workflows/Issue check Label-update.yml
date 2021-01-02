@@ -18,9 +18,8 @@ jobs:
           parameters: '[ {"keywords": ["Requesting access to", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Requesting access to", ""], "labels": ["Repository Access"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
          # name:  
-         # if:  ${{ success() }}
-          #  - run: Job2
-job2:
+         # if:  ${{ success() }}          #  - run: Job2
+  job2:
     runs-on: ubuntu-latest
     steps:
       - name: body validation for question 1 (developer/IT/Solution)
@@ -29,7 +28,7 @@ job2:
           title-or-body: "body"
           parameters: '[ {"keywords": ["developer", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Solution", "IT"], "labels": ["Repository Access"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-job3:
+  job3:
     runs-on: ubuntu-latest
     steps:
       - name: body validation for question 2 (Reason)
@@ -38,7 +37,7 @@ job3:
           title-or-body: "body"
           parameters: '[ {"keywords": ["developer", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["Solution", "IT"], "labels": ["Repository Access"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-job4:
+  job4:
     runs-on: ubuntu-latest
     steps:
       - name: body validation for question 3 (Kind of access)
@@ -47,7 +46,7 @@ job4:
           title-or-body: "body"
           parameters: '[ {"keywords": ["bug fix", "" , "change"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["upadte", ""], "labels": ["Repository Access"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-job5:
+  job5:
     runs-on: ubuntu-latest
     steps:
       - name: body validation for question 3 (Kind of access)
@@ -56,7 +55,7 @@ job5:
           title-or-body: "body"
           parameters: '[ {"keywords": ["read", "" , "write"], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["admin", ""], "labels": ["Repository Access"], "assignees": ["username"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-job6:
+  job6:
     runs-on: ubuntu-latest
     steps:
       - name: body validation for question 3 (Kind of access)
@@ -65,7 +64,7 @@ job6:
           title-or-body: "body"
           parameters: '[ {"keywords": ["limited", "" , ""], "labels": ["Repository Access"], "assignees": ["username"]}, {"keywords": ["unlimited", ""], "labels": ["Repository Access"], "assignees": ["username"]}]'
                           
-job7: 
+  job7: 
     runs-on: ubuntu-latest
     needs: [job1,job2,job3,job4,job5,job6]
    # steps:
@@ -97,20 +96,20 @@ job7:
             
 
 #job8:
-    runs-on: ubuntu-latest
-    needs: [job2]
-    steps:
-      - uses: fregante/title-to-labels-action@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          keywords: "Requesting access to"  #, bug report
-          labels: "Awaiting Input"
+#     runs-on: ubuntu-latest
+#     needs: [job2]
+#     steps:
+#       - uses: fregante/title-to-labels-action@v1
+#         with:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           keywords: "Requesting access to"  #, bug report
+#           labels: "Awaiting Input"
             
-     # - uses: srggrs/assign-one-project-github-action@1.2.0
+#      - uses: srggrs/assign-one-project-github-action@1.2.0
         
-      #  if: |
-       #      contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
-        #     contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
+#        if: |
+#             contains(github.event.issue.labels.*.name, 'Awaiting Input') ||
+#             contains(github.event.pull_request.labels.*.name, 'Awaiting Input')
 
       
         
