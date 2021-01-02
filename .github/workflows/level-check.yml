@@ -1,6 +1,6 @@
   
 name: "Test Issue Auto Labeling and Assigning"
-on:
+#on:
   issues:
     types: [opened]
 
